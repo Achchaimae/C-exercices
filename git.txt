@@ -87,4 +87,4 @@ This command sends the committed changes of master branch to your remote reposit
 git pull
 Usage: git pull [Repository Link]  
 
-This command fetches and merges changes on the remote server to your working directory.
+This command fetches and merges changes on the remote server to your working directory. ok
