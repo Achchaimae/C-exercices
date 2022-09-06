@@ -6,3 +6,8 @@ C'est quoi un outil de versionning ?​
 Les systèmes de contrôle de version  sont une catégorie d'outils logiciels qui permettent de gérer les changements apportés à un code source au fil du temps.​
 
 ​
+
+
+
+
+Le contrôle de version aide les développeurs à suivre et à gérer les modifications apportées au code d’un projet logiciel. Au fur et à mesure qu’un projet logiciel prend de l’ampleur, le contrôle de version devient essentiel.
