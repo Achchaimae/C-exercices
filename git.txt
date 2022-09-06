@@ -1,4 +1,3 @@
-hello everyone
  Outils versionning:
  
 -C'est quoi un outil de versionning ?
