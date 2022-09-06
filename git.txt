@@ -8,17 +8,6 @@ GIT:
 Definition :
 ​Git est un logiciel de gestion de versions décentralisé , créé en 2005 par Linus Torvalds 
 
- Fonctionnement :
-Git possède deux structures de données  : une base d'objets et un cache de répertoires . Il existe quatre types d'objets :​
-
-​l'objet blob
-
-​l'objet tree
-
-​l'objet commit
-
-​l'objet tag
-
  GITHUB:
  
  Definition :
