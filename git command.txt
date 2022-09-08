@@ -1,0 +1,15 @@
+git init
+git config --global user.name "yourname"
+git config --global user.email "yourname@gmail.com"
+git remote add origin url
+git add .
+git commit -m "initial commit"
+//git log to show what is the commit availables
+git push origin master 
+// git add .
+git commit -m "modify" for modify smtg 
+git push master
+****************************************************************
+to upload a file from github we use
+git clone url repo
+same for add. and commit 
