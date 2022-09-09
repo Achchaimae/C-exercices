@@ -98,6 +98,9 @@ switch(choix){
 
        modu=nbr1%nbr2;
        printf(" la division est %d \n",modu);
+    default:
+        case 5 : 
+			printf("Votre choix est invalide, reessayer.");
 
 }
 
