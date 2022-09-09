@@ -5,12 +5,6 @@ int main(){
     float some,sous,prod,div,power;
     int nbr1,nbr2;
     double a,result;
-/*printf("entrer premier nombre\n");
-scanf("%d",&nbr1);
-printf("entrer l'operateur \n");
-scanf("%s",&op);
-printf("entrer premier nombre\n");
-scanf("%d",&nbr2);*/
 printf("\t\t\t\t \tMENU de calculatrice\n");
 printf(" 1: addition\n 2: soustraction\n 3: multiplication\n 4: division\n 5:puissance \n 6:sinus \n 7:cosinus \n 8: tangente \n 9:La valeur absolue\n 10: modulo\n");
 scanf("%d",&choix);
