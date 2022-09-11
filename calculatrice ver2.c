@@ -5,8 +5,9 @@ int main(){
     float some,sous,prod,div,power;
     int nbr1,nbr2;
     double a,result;
+       double n1, f, i;
 printf("\t\t\t\t \tMENU de calculatrice\n");
-printf(" 1: addition\n 2: soustraction\n 3: multiplication\n 4: division\n 5:puissance \n 6:sinus \n 7:cosinus \n 8: tangente \n 9:La valeur absolue\n 10: modulo\n");
+printf(" 1: addition\n 2: soustraction\n 3: multiplication\n 4: division\n 5:puissance \n 6:sinus \n 7:cosinus \n 8: tangente \n 9:La valeur absolue\n 10: modulo\n 11 : log \n 12:factoriel \n");
 scanf("%d",&choix);
 printf("\t\t\t\t\t******************\n");
 
@@ -92,9 +93,31 @@ switch(choix){
 
        modu=nbr1%nbr2;
        printf(" la division est %d \n",modu);
-    default:
-        
-			printf("Votre choix est invalide, reessayer.");
+    case 11 :
+        printf("entrer une valeur ");
+        scanf("%lf", &a);
+        result = log(a);
+        printf("\nResult = %lf", result);
+        break;
+    case 12 :
+
+    printf("\nEnter a number: ");
+    scanf("%lf", &n1);
+    printf("%lf ",n1);
+    int temp;
+    f = n1;
+    printf("%lf ",f);
+    for(int i =1; i <n1; i++)
+    {
+        f *= i;
+       /* printf("%lf=%d ",f,i);
+        scanf("%d",&temp);*/
+    }
+    result = f;
+    printf("\nResult = %lf", result);
+    break;
+       default:
+                printf("Votre choix est invalide, reessayer.");
 
 }
 
