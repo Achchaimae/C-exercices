@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+//tri_simple
 void Trie_Croissante(int *t, int n){
 int i,j;
 int tmp;
@@ -83,10 +83,36 @@ printf("\n le tableau par ordre croissante  METHODE PAR INSERTION \n");
 
 
 }
+//Recherche simple
+int Recherche_simple(int val,int *t, int n){
+    int i;
+    for(i=0;i<n;i++){
+        if(val==*(t+i))
+            return i;
+    return -1;
+    }
+}
+//Recherche dichotomie
+int Recherche_dichotomie(int val,int *t, int n){
+    int debut=0;
+    int fin=0;
+    int milieu=(debut+fin)/2;
+    while(t[milieu]!=val&&fin>debut){
+        if(t[milieu]>val){
+            fin=milieu-1;
+        }
+        else
+            debut=milieu+1;
+        milieu=(debut+fin)/2;
+    }
+    if(t[milieu]==val)
+        return milieu;
+    return -1;
+}
 
 int main(){
  int *t,*p,*q;
-int n,i,m,j,d,k=0;
+int val,r,n,i,m,j,d,k=0;
 //saisie de 1er tableau
 printf("donner la taille de votre tableaux\n");
 scanf("%d",&n);
@@ -122,8 +148,12 @@ Trie_Croissante(q,d);
 Trie_Selection(q, d);
 Tri_bulle(q, d);
 tri_par_insertion(q,d);
-
-
+printf("inserer la valeur a rechercher\n");
+scanf("%d",&val);
+r=Recherche_simple(val,q,d);
+printf("la position de votre valeur est%d\n",r);
+int R=Recherche_dichotomie(val,q,d);
+printf("la position de votre dichotomie est%d\n",R);
 
     return 0;
 }
