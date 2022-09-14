@@ -27,13 +27,13 @@ void Trie_Selection(int *t,int d){
     index=i;
  for (j=i + 1; j < d; j++)
     {
-      if (t[index] > t[j])
+      if (*(t+index) > *(t+j))
      index=j;
 
       if(index!=i){
-        tmp=t[i];
-        t[i]=t[index];
-        t[index]=tmp;
+        tmp=*(t+j);
+        *(t+j)=*(t+index);
+        *(t+index)=tmp;
              }
       }}
       printf("le tableau par ordre croissante  METHODE PAR SELECTION \n");
