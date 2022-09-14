@@ -23,7 +23,7 @@ int tmp;
 void Trie_Selection(int *t,int d){
     int i,j,index;
     int tmp=0;
- for(i=0;i<d-;i++){
+ for(i=0;i<d;i++){
     index=i;
  for (j=i + 1; j < d; j++)
     {
@@ -49,16 +49,16 @@ int i,j,tmp;
 tmp=0;
 for(i=0;i<=n-1;i++){
     for(j=i+1;j<=n-1;j++){
-            if((*t+j)>(*t+j)){
-               tmp=t[j];
-               t[i]=t[j+1];
-               t[j+1]=tmp;
+            if(*(t+j)>*(t+j)){
+               tmp=*(t+i);
+               *(t+i)=*(t+j+1);
+               *(t+j+1)=tmp;
             }
     }
 }
 printf("\n le tableau par ordre croissante  METHODE A BULLE \n");
         for(j=0;j<=n-1;j++){
-            printf("%d \t",*(t+i));
+            printf("%d \t",*(t+j));
 
         }
 }
@@ -99,6 +99,7 @@ printf("Entrez les éléments du tableau:\n ");
     }
 Trie_Croissante(q,d);
 Trie_Selection(q, d);
+Tri_bulle(q, d);
 
 
 
