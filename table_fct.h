@@ -1,7 +1,6 @@
+
 #include<stdio.h>
-#include<stdlib.h>
-#include"table_fct.h"
-/*//tri_simple
+//tri_simple
 void Trie_Croissante(int *t, int n){
 int i,j;
 int tmp;
@@ -100,7 +99,7 @@ int Recherche_dichotomie(int val,int *t, int n){
     while(*(t+milieu)!=val&&fin>debut){
         if(*(t+milieu)>val){
             fin=milieu-1;
-           // return milieu;
+
         }
 
         else
@@ -108,68 +107,72 @@ int Recherche_dichotomie(int val,int *t, int n){
             debut=milieu+1;
            }
            milieu=(debut+fin)/2;
-      //  return milieu;
+
     }
 
     if(*(t+milieu)==val)
         return milieu+1;
     return -1;
-}*/
-
-int main(){
- int *t,*p,*q;
-int val,valeur,r,n,i,m,j,pos,d,k=0;
-//saisie de 1er tableau
-printf("donner la taille de votre tableaux\n");
-scanf("%d",&n);
-t=malloc(n*sizeof(int));
-printf("Entrez les éléments du tableau: \n");
-    for (i = 0; i < n ; i++){
-        printf("table[%d]:\n",i+1);
-        scanf("%d", t+i);
 }
-//saisie de 2eme tableau
-printf("donner la taille de dexieme tableaux\n");
-scanf("%d",&m);
-p=malloc(m*sizeof(int));
-printf("Entrez les éléments du tableau:\n ");
-    for (i = 0; i < m ; i++){
-        printf("table[%d]:\n",i+1);
-        scanf("%d", p+i);
-    }
+//inversed'un tableau
+void inverser(int *t,int n){
+    int *t2;
+    int i,j;
+//Copier les éléments dans le tableau tab2 à partir de la fin du tableau tab1
+    for (i = n - 1, j = 0; i >= 0; i--, j++)
+        t2[j] = t[i];
 
-   d = n+m;
- q=malloc((n+m)* sizeof(int));
-    for(i=0;i<n;i++){
-        *(q+i)=*(t+i);
-        printf("la nouvelle valeur %d est : %d \n",i+1,*(q+i));
-    }
-    for( i = n; i < d ;  i++)
-    {
-       *(q+i)=*(p+k);
-       k++;
-       printf("la nouvelle valeur %d est : %d \n",i+1,*(q+i));
-    }
-Trie_Croissante(q,d);
-Trie_Selection(q, d);
-Tri_bulle(q, d);
-tri_par_insertion(q,d);
-printf("\n inserer la valeur a rechercher\n");
-scanf("%d",&val);
-r=Recherche_simple(val,q,d);
-printf("\nla position de votre valeur est %d\n",r);
-int R=Recherche_dichotomie(val,q,d);
-printf("\nla position de votre dichotomie est %d\n",R);
-inverser(q, d);
-minimum(q,d);
-maximum(q,d);
-printf("donner la position ou vous inserer la valeur\n");
-scanf("%d",&pos);
-printf("donner la valeur  que vous inserer\n");
-scanf("%d",&valeur);
-d=d+1;
+    //Copie le tableau inversé dans l'original.
+    for (i = 0; i < n; i++)
+        t[i] = t2[i];
 
-t=realloc(q,d);
-insertion(q,valeur, pos,d);
-    return 0;
+    printf("Le tableau inversé est:\n ");
+
+    for (i = 0; i < n; i++)
+        printf("%d\n", t[i]);
+}
+//max d'un tableau
+void maximum(int *t, int n){
+int i;
+int max=0;
+int position=0;
+
+      for (int i=0 ; i< n ; i++)
+      {
+          if(t[i]>max){
+                         max=t[i];
+                         position=i+1;
+          }
+      }
+      printf("Maximum : %d Et sa Position : est %d\n",max,position);
+
+}
+//min d'un tableau
+void minimum(int *t, int n){
+
+int i;
+int position=0;
+
+       int min=t[0];
+      for (int i=0 ; i< n ; i++)
+      {
+          if(t[i]<min){
+                         min=t[i];
+                         position=i+1;
+          }
+      }
+      printf("Minimum : %d Et sa Position : est %d\n",min,position);
+}
+//inserer une valeur a une position donner dand un tableau
+void insertion(int *t, int val, int pos, int n){
+    int i;
+for(i=n-1;i>=pos-1; i--){
+    t[i+1]=t[i];
+    t[pos-1]=val;
+    }
+    printf("le tableau apres l'insertion est \n");
+        for(i=0;i<=n;i++){
+            printf("%d\n",t[i]);
+        }
+
 }
